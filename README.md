@@ -7,7 +7,9 @@ Written in Python using Flask.
 
 * ~~Human-readable HTML version~~
 * Plain text version for wget-like tools
-* JSON output
+* ~~JSON output~~
+* `.deb` package
+* Configuration file
 
 ## License
 
