@@ -6,7 +6,7 @@ body {
     color: red;
 }
 
-p {
+p,h1 {
     font-family: monospace;
     color: #39f400;
 }
