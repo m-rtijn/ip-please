@@ -29,6 +29,10 @@ from flask import render_template
 app = Flask(__name__)
 
 @app.route("/")
-def html():
+def ip_html():
     user_ip = request.remote_addr
     return render_template("index.html", user_ip = user_ip)
+
+@app.route("/json")
+def ip_json():
+    return json.jsonify(ip=request.remote_addr)
