@@ -11,7 +11,7 @@ Written in Python using Flask.
 
 ## License
 
-``
+```
 Copyright (c) 2018 Martijn
 
 ippls is available under the terms of GNU Affero General Public License, either version 3
