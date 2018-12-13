@@ -3,6 +3,12 @@
 `ippls` is a super basic API to get the remote IP address of your current machine.
 Written in Python using Flask.
 
+## Todo
+
+* ~~Human-readable HTML version~~
+* Plain text version for wget-like tools
+* JSON output
+
 ## License
 
 ``
