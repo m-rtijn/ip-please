@@ -19,7 +19,7 @@ virtualenv_
 ## Todo
 
 * ~~Human-readable HTML version~~
-* Plain text version for wget-like tools
+* ~~Plain text version for wget-like tools~~
 * ~~JSON output~~
 * `.deb` package
 * Configuration file

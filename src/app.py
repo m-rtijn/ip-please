@@ -28,11 +28,18 @@ from flask import render_template
 
 app = Flask(__name__)
 
+def get_ip():
+    return request.remote_addr
+
 @app.route("/")
 def ip_html():
-    user_ip = request.remote_addr
+    user_ip = get_ip();
     return render_template("index.html", user_ip = user_ip)
 
 @app.route("/json")
 def ip_json():
-    return json.jsonify(ip=request.remote_addr)
+    return json.jsonify(ip=get_ip())
+
+@app.route("/plain")
+def ip_plain():
+    return get_ip()
