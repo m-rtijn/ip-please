@@ -2,7 +2,7 @@
 """
     app.py
 
-    Copyright (c) 2018 Martijn
+    Copyright (c) 2018, 2019 Martijn
 
     This file is part of ippls.
 
@@ -29,7 +29,10 @@ from flask import render_template
 app = Flask(__name__)
 
 def get_ip():
-    return request.remote_addr
+    try:
+        return request.headers["X-Real-IP"]
+    except KeyError:
+        return request.remote_addr
 
 @app.route("/")
 def ip_html():
