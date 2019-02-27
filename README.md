@@ -13,21 +13,27 @@ flask run
 This will run the application on port 5000. If you want to actually use the application
 in a production environment, it is recommended to set up a reverse proxy with nginx.
 
-_Todo: Add instructions on installation / running the application within a python
-virtualenv_
+### Sample nginx configuration
 
-## Todo
+To use nginx as a reverse proxy for `ippls`, add the following four lines to the `server`
+block in your nginx configuration:
+```
+location /ippls/ {
+    proxy_pass http://127.0.0.1:5000/;
+    proxy_set_header X-Real-IP $remote_addr;
+}
+```
 
-* ~~Human-readable HTML version~~
-* ~~Plain text version for wget-like tools~~
-* ~~JSON output~~
+## To do
+
 * `.deb` package
 * Configuration file
+* Instructions on running the application in a python virtualenv
 
 ## License
 
 ```
-Copyright (c) 2018 Martijn
+Copyright (c) 2018, 2019 Martijn
 
 ippls is available under the terms of GNU Affero General Public License, either version 3
 of the License or (at your option) any later version.
