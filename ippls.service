@@ -1,0 +1,18 @@
+# Example systemd service file for ippls
+#
+# Note that is an example, you will probably need to edit this before you use
+# it in a production environment.
+
+[Unit]
+Description=gunicorn instance for ippls
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/ippls/src
+Environment="PATH=/opt/ippls/ipplsvenv/bin"
+ExecStart=/opt/ippls/ipplsvenv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 wsgi:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
