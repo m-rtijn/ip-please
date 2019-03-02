@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    app.py
+    ippls.py
 
     Copyright (c) 2018, 2019 Martijn
 
@@ -46,3 +46,6 @@ def ip_json():
 @app.route("/plain")
 def ip_plain():
     return get_ip()
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
