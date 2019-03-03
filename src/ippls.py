@@ -49,5 +49,9 @@ def ip_json():
 def ip_plain():
     return get_ip()
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return ip_html(), 301
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
