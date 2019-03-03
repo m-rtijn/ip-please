@@ -39,10 +39,12 @@ def ip_html():
     user_ip = get_ip();
     return render_template("index.html", user_ip = user_ip)
 
+@app.route("/ip.json")
 @app.route("/json")
 def ip_json():
     return json.jsonify(ip=get_ip())
 
+@app.route("/ip.txt")
 @app.route("/plain")
 def ip_plain():
     return get_ip()
