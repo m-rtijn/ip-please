@@ -1,0 +1,5 @@
+__pycache__
+
+# Hope that everyone has 'venv' somewhere in the name of the python virtual
+# environment folder.
+*venv*
