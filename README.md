@@ -61,6 +61,10 @@ location /ippls/ {
 
 ## License
 
+[<img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png"
+    align="right"
+    alt="GNU AGPLv3 image">](https://www.gnu.org/licenses/agpl.html)
+
 ```
 Copyright (c) 2018, 2019 Martijn
 
