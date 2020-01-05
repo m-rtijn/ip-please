@@ -16,3 +16,6 @@ ExecStart=/opt/ippls/ipplsvenv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 ws
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
