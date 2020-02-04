@@ -11,7 +11,7 @@ cd ippls
 python3 -m venv ipplsvenv
 source ipplsvenv/bin/activate
 pip install flask
-python src/app.py
+python src/ippls.py
 ```
 This will run the application using Flask's built-in test server. This is however **not**
 a solution suitable for in a production environment.
