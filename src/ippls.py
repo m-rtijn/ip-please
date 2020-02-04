@@ -23,10 +23,10 @@
 from flask import Flask
 from flask import json
 from flask import request
-from flask import Response
 from flask import render_template
 
 app = Flask(__name__)
+
 
 def get_ip():
     try:
@@ -34,24 +34,29 @@ def get_ip():
     except KeyError:
         return request.remote_addr
 
+
 @app.route("/")
 def ip_html():
-    user_ip = get_ip();
-    return render_template("index.html", user_ip = user_ip)
+    user_ip = get_ip()
+    return render_template("index.html", user_ip=user_ip)
+
 
 @app.route("/ip.json")
 @app.route("/json")
 def ip_json():
     return json.jsonify(ip=get_ip())
 
+
 @app.route("/ip.txt")
 @app.route("/plain")
 def ip_plain():
     return get_ip()
 
+
 @app.errorhandler(404)
 def page_not_found(error):
     return ip_html(), 301
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
