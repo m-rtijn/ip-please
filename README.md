@@ -66,7 +66,7 @@ location /ippls/ {
     alt="GNU AGPLv3 image">](https://www.gnu.org/licenses/agpl.html)
 
 ```
-Copyright (c) 2018, 2019 Martijn
+Copyright (c) 2018, 2019, 2020 Martijn
 
 ippls is available under the terms of GNU Affero General Public License, either version 3
 of the License or (at your option) any later version.
