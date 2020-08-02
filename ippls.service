@@ -8,8 +8,7 @@ Description=gunicorn instance for ippls
 After=network.target
 
 [Service]
-User=www-data
-Group=www-data
+User=nobody
 WorkingDirectory=/opt/ippls/src
 Environment="PATH=/opt/ippls/ipplsvenv/bin"
 ExecStart=/opt/ippls/ipplsvenv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 wsgi:app
