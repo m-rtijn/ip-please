@@ -29,6 +29,7 @@ app = Flask(__name__)
 
 
 def get_ip():
+    """Read the IP address from the current request."""
     try:
         return request.headers["X-Real-IP"]
     except KeyError:
@@ -37,6 +38,7 @@ def get_ip():
 
 @app.route("/")
 def ip_html():
+    """Render a human-friendly homepage with the received remote IP information."""
     user_ip = get_ip()
     return render_template("index.html", user_ip=user_ip)
 
@@ -44,17 +46,21 @@ def ip_html():
 @app.route("/ip.json")
 @app.route("/json")
 def ip_json():
+    """Return a JSON with the remote IP information."""
     return json.jsonify(ip=get_ip())
 
 
 @app.route("/ip.txt")
 @app.route("/plain")
 def ip_plain():
+    """Return only the remote IP."""
     return get_ip()
 
 
 @app.errorhandler(404)
 def page_not_found(error):
+    """On 404, just redirect to the homepage."""
+    print(error)
     return ip_html(), 301
 
 
