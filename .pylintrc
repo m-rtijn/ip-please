@@ -1,0 +1,8 @@
+[GENERAL]
+fail-under=9.0
+
+[MESSAGES CONTROL]
+#disable=R0903
+
+[BASIC]
+good-names=i,j,k,x,ax
