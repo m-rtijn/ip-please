@@ -1,23 +1,23 @@
-# Example systemd service file for ippls
+# Example systemd service file for ip-please
 #
 # Note that is an example, you will probably need to edit this before you use
 # it in a production environment.
 
 [Unit]
-Description=gunicorn instance for ippls
+Description=gunicorn instance for ip-please
 After=network.target
 
 [Service]
 #User=nobody
-WorkingDirectory=/opt/ippls/src
-Environment="PATH=/opt/ippls/ipplsvenv/bin"
-ExecStart=/opt/ippls/ipplsvenv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 wsgi:app
+WorkingDirectory=/opt/ip-please/src
+Environment="PATH=/opt/ip-please/ip-pleasevenv/bin"
+ExecStart=/opt/ip-please/ip-pleasevenv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 wsgi:app
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 
 # Extra security hardening options
 
-# Empty because ippls does not require any special capability. See capabilities(7) for more information.
+# Empty because ip-please does not require any special capability. See capabilities(7) for more information.
 CapabilityBoundingSet=
 DynamicUser=true
 IPAddressAllow=127.0.0.0/8
